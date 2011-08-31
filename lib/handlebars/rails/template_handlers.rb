@@ -17,7 +17,8 @@ module Handlebars::Rails
     end
 
     def evaluate(scope, locals, &block)
-      ::Handlebars::Template.render(name, data)
+      # ::Handlebars::Template.render(name, data)
+      ::Handlebars::Template.render(scope.logical_path.gsub('app/templates/', ''), data)
     end
   end
 end
